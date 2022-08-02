@@ -11,16 +11,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
+    # strategy:
+    #   matrix:
+    #     node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Uses Node.Js version ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - name: Uses Node.Js version 16
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{matrix.node-version}}
+          node-version: 16
       - name: Yarn Install
         run: |
           yarn install
