@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import ConditionalRendering from "./components/ConditionalRendering";
+import FormsComponent from "./components/Forms";
+import { Routes, Route } from "react-router-dom";
 
-function App() {
+const AppComponent = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-component-container">
+      <Routes>
+        <Route path="/" element={<ConditionalRendering />} />
+        <Route path="showInfo" element={<FormsComponent />} />
+        <Route element={<p>No page exists</p>} />
+      </Routes>
     </div>
   );
 }
 
-export default App;
+export default AppComponent;

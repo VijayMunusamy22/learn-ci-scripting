@@ -1,0 +1,32 @@
+.conditional-rendering-component-container{
+    padding: 20px;
+    background-color: aquamarine;
+}
+
+.user-details-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.each-user-details-chip{
+    border: 2px solid white;
+    padding: 10px;
+}
+
+.each-detail-label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.each-detail-value {
+    font-size: 14px;
+    margin: 5px 0px !important;
+}
+
+.user-avatar{
+    border-radius: 50%;
+    border: 5px solid #000;
+    margin: 10px 0px 0px 0px;
+}

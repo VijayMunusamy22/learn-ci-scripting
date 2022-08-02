@@ -1,0 +1,34 @@
+name: Test Build
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Uses Node.Js version ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      - name: Yarn Install
+        run: |
+          yarn install
+      - name: Yarn Test Build
+        run: |
+          yarn build
+      - name: Deployment completed
+        env:
+          AWS_ACCESS_KEY: "TEST ACCESS KEY"
+        run: |
+          echo("Test build completed!!")
