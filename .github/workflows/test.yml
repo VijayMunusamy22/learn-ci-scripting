@@ -26,7 +26,7 @@ jobs:
           yarn install
       - name: Yarn Test Build
         run: |
-          yarn build
+          CI=false yarn build
       - name: Deployment completed
         env:
           AWS_ACCESS_KEY: "TEST ACCESS KEY"
