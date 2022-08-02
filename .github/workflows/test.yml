@@ -30,5 +30,3 @@ jobs:
       - name: Deployment completed
         env:
           AWS_ACCESS_KEY: "TEST ACCESS KEY"
-        run: |
-          echo("Test build completed!!")
