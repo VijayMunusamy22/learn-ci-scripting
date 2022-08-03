@@ -31,7 +31,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{secrets.DOCKER_USERNAME}}/learnReactApp:latest
+          tags: ${{secrets.DOCKER_USERNAME}}/learnreactapp:latest
 
       # Commenting below line to try this build with Dockerizing React App
 
