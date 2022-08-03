@@ -1,12 +1,12 @@
 FROM node:16-alpine3.15
 
-WORKDIR /app
+# WORKDIR /app
 
-ARG REACT_APP_REQ_RES_API_URL=""
+# ARG REACT_APP_REQ_RES_API_URL=""
 
-ENV REACT_APP_REQ_RES_API_URL = "https://reqres.in/api"
+# ENV REACT_APP_REQ_RES_API_URL = "https://reqres.in/api"
 
-COPY package.json ./app
+COPY packag*.json ./
 
 RUN yarn install
 
