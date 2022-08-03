@@ -1,6 +1,6 @@
 .conditional-rendering-component-container{
     padding: 20px;
-    background-color: aquamarine;
+    background-color: red; /* aquamarine; */
 }
 
 .user-details-box{

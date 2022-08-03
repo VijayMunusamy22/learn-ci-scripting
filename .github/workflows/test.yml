@@ -32,6 +32,14 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{secrets.DOCKER_USERNAME}}/learnreactapp:latest
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: Push the build code to S3 bucket
+        run: aws s3 sync ./build s3://ls-poc-github-migaration-site
 
       # Commenting below line to try this build with Dockerizing React App
 
